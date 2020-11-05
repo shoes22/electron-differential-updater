@@ -22,7 +22,7 @@ let isZipCreatedForDiffDownload = false;
 
   const appCacheDirName = path.join(
     getAppCacheDir(),
-    app.isPackaged ? `${APP_NAME}-updater` : "Electron"
+    app.isPackaged ? `belouga-live-updater` : "Electron"
   );
 
   const zipName = `${APP_NAME}-${APP_VERSION}-mac.zip`;
