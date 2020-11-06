@@ -7,7 +7,7 @@ const currentWorkingDirectory = process.cwd();
 const packageInfo = require(path.join(currentWorkingDirectory, "package.json"));
 
 const APP_NAME = packageInfo.build.productName;
-const APP_VERSION = process.argv[2] ? process.argv[2] : packageInfo.version;
+const APP_VERSION = packageInfo.version;
 const APP_DIST_PATH = path.join(currentWorkingDirectory, "dist");
 
 function generateZipandBlockmap() {
