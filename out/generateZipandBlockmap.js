@@ -29,7 +29,7 @@ const APP_DIST_PATH = path.join(currentWorkingDirectory, "dist");
 
 function generateZipandBlockmap() {
   console.log("Zipping...");
-  execSync(`ditto -V -c  -k --sequesterRsrc --keepParent "${APP_DIST_PATH}/mac/${APP_NAME}.app" "${APP_DIST_PATH}/${APP_NAME}-${APP_VERSION}-mac.zip"`);
+  execSync(`ditto -V -c  -k --sequesterRsrc --keepParent "${APP_DIST_PATH}/mac/${APP_NAME}.app" "${APP_DIST_PATH}/${APP_NAME}-${APP_VERSION}-mac.zip" --zlibCompressionLevel 9`);
   console.log("Zipping Completed");
   const APP_GENERATED_BINARY_PATH = path.join(APP_DIST_PATH, `${APP_NAME}-${APP_VERSION}-mac.zip`);
 

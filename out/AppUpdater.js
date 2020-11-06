@@ -357,7 +357,7 @@ class AppUpdater extends _events().EventEmitter {
   checkForUpdates() {
     if (!(0, _prepareAppZip().isZipAvailabeForDifferentialDownload)()) {
       this.emit("error", "Configuring update for differential download", "Cannot check for updates");
-      return Promise.resolve(null);
+      return Promise.reject(null);
     }
 
     let checkForUpdatesPromise = this.checkForUpdatesPromise;

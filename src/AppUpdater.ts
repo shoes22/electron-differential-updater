@@ -271,7 +271,7 @@ export abstract class AppUpdater extends EventEmitter {
         "Configuring update for differential download",
         "Cannot check for updates"
       );
-      return Promise.resolve(null);
+      return Promise.reject(null);
     }
     let checkForUpdatesPromise = this.checkForUpdatesPromise;
     if (checkForUpdatesPromise != null) {
