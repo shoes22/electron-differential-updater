@@ -245,7 +245,8 @@ export abstract class DifferentialDownloader {
             emit(DOWNLOAD_PROGRESS, {
               transferred: index,
               total: tasks.length,
-              percent: (index / tasks.length) * 100
+              percent: (index / tasks.length) * 100,
+              isDiff: true
             });
           } catch (e) {
             console.log(e);

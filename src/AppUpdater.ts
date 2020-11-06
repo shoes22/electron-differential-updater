@@ -196,7 +196,9 @@ export abstract class AppUpdater extends EventEmitter {
     super();
 
     this.on("error", (error: Error) => {
+      this._logger.error(`Error: ${error}`);
       this._logger.error(`Error: ${error.stack || error.message}`);
+      return Promise.reject(null);
     });
 
     if (app == null) {

@@ -229,7 +229,11 @@ class AppUpdater extends _events().EventEmitter {
 
     this._testOnlyOptions = null;
     this.on("error", error => {
+      this._logger.error(`Error: ${error}`);
+
       this._logger.error(`Error: ${error.stack || error.message}`);
+
+      return Promise.reject(null);
     });
 
     if (app == null) {
